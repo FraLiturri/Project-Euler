@@ -9,3 +9,9 @@ def prime_checker(n):
                 isPrime = False
     return isPrime
 
+sum = 0
+for i in range(2, 10000): 
+    if prime_checker(i): 
+        sum += i
+    
+print(sum)
