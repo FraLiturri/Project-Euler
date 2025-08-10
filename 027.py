@@ -1,6 +1,6 @@
 import numpy as np  # pyright: ignore
 
-
+#IN SOSPESO
 def prime_checker(n):
     isPrime = True
     for i in range(2, n + 1):
