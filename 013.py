@@ -126,4 +126,5 @@ sum = 0
 for i in range(0, len(data)):
     sum += tail_cutter(data[i])
 
+
 print(tail_cutter(sum))
