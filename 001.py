@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore
+import numpy as np  # pyright: ignore ✅
 
 n = 1000
 sum = 0

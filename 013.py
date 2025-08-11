@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore
+import numpy as np  # pyright: ignore ✅
 
 data = [
     37107287533902102798797998220837590246510135740250,

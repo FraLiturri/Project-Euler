@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore
+import numpy as np  # pyright: ignore ✅
 
 digits = []
 max = 0
@@ -14,7 +14,6 @@ def palindrome_chekcer(n):
     for k in range(0, len(digits)):
         if digits[k] != digits[len(digits) - 1 - k]:
             isPalindrome = False
-    #print(n, " :" ,isPalindrome)
     digits.clear()
     return isPalindrome
 

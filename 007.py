@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore
+import numpy as np  # pyright: ignore ✅
 
 counter = 0
 n = 2
