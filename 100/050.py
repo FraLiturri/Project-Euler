@@ -1,6 +1,6 @@
 import numpy as np  # pyright: ignore
 
-limit = 10**6
+limit = 10**4
 isPrime = True
 primes = [2, 3]  # we know 2,3 are prime
 
