@@ -1,4 +1,4 @@
-import numpy as np  # pyright:ignore ✅
+import numpy as np  # Status: done ✅
 
 
 limit = 2 * 10**6

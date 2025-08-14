@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore ✅
+import numpy as np  # Status: done ✅
 
 n = 600851475143
 root = int(np.sqrt(n))

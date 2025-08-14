@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore ✅
+import numpy as np  # Status: done ✅
 
 max_n = 10
 sum = 0
