@@ -1,4 +1,4 @@
-import numpy as np  # Status: done ✅ (can be improved, it's too orecchietta)
+import numpy as np  # Status: done ✅ (can be improved, it's too much orecchietta)
 
 squares = []
 primes = []
