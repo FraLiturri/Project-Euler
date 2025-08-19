@@ -1,4 +1,4 @@
-import numpy as np  # pyright: ignore
+import numpy as np  # Status: work in progress
 
 def prime_checker(n):
     isPrime = True

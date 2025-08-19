@@ -1,4 +1,4 @@
-import numpy as np  # Status: work in progress
+import numpy as np  # Status: done ✅
 
 limit = 10**6
 naturals = []
