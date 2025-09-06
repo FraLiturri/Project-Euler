@@ -1,4 +1,4 @@
-import numpy as np  # Status: work in progress
+import numpy as np  # Status: done ✅
 
 
 def sieve(n):
@@ -23,9 +23,27 @@ def prime_checker(n):
     return isPrime
 
 
-primes = sieve(10**2)
+primes = sieve(5*10**3)
+prime_search = set(sieve(10**6)) #worshipping set; 
 prime_sum = np.sum(primes)
 
+inf_s = prime_sum
+max_count = 0
+number = 0
 
+for i in range(-1, len(primes)):
+    prev_s = 0
+    k = len(primes) - 1
+    if i >= 0:
+        inf_s = inf_s - primes[i]
+    sup_s = inf_s
 
-print(max)
+    while sup_s > 0:
+        if sup_s in prime_search and sup_s < 10**6:
+            number = sup_s if max_count < k - i else number
+            max_count = k - i if max_count < k - i else max_count
+
+        sup_s = sup_s - primes[k]
+        k = k - 1
+
+print("The searched number is:", number)
