@@ -13,13 +13,13 @@ while True:
                 counter += b
 
         else:
-            if counter + b%i +1 > limit:
+            if counter + b % i + 1 > limit:
                 reached = True
             else:
-                counter += b % i + 1          
+                counter += b % i + 1
 
             num = b % i + 1
-            #print("b", b, "; i", i, num)
+            # print("b", b, "; i", i, num)
 
     b += 1
     if reached:

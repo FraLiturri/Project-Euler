@@ -1,4 +1,4 @@
-import numpy as np # Status: done ✅
+import numpy as np  # Status: done ✅
 
 base, exp = np.loadtxt("./data/0099_base_exp.txt", delimiter=",", unpack=True)
 
@@ -9,4 +9,4 @@ for i in range(0, len(base)):
     if pow(base[i], r) >= base[saved_index]:
         saved_index = i
 
-print("The searched line is", saved_index + 1) # +1 for decimal
+print("The searched line is", saved_index + 1)  # +1 for humnas;

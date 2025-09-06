@@ -2,3 +2,5 @@
 /__pycache__
 /.vscode
 /tests.py
+/.venv
+/utilities.py
