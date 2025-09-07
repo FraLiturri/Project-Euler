@@ -42,6 +42,7 @@ for i in range(-1, len(primes)):
         if sup_s in prime_search and sup_s < 10**6:
             number = sup_s if max_count < k - i else number
             max_count = k - i if max_count < k - i else max_count
+            break
 
         sup_s = sup_s - primes[k]
         k = k - 1
