@@ -1,6 +1,4 @@
 import numpy as np
-import itertools
-
 
 def sieve(n):
     is_prime = [True] * (n + 1)

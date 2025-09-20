@@ -1,22 +1,16 @@
-import numpy as np  # pyright: ignore
-from collections import OrderedDict
+import numpy as np  # Status: work in progress
 
 
-def digit_simplifier(n, m):  # doing orecchietta
-    n = str(n)
-    m = str(m)
-    removed = False
-    for i in range(0, len(str(m))):
-        if i in str(n) and not removed:
-            str(m)[i] = ""
+def simplifier(num, den):
+    if den % 10 != 0:
+        for num_dig in str(num):
+            num_aux = list(str(num))
+            den_aux = list(str(den))
 
-            removed = True
+            if num_dig in str(den):
+                num_aux.remove(num_dig)
+                den_aux.remove(num_dig)
+    return [num_aux, den_aux]
 
-    return n, m
 
-
-for num in range(11, 100):
-    for den in range(11, 100):
-        red_num, red_den = digit_simplifier(num, den)
-
-        print(num, den, red_num, red_den)
+print(simplifier(22, 32))
