@@ -1,4 +1,6 @@
-import numpy as np  # Status: done ✅ (Lycherel's numbers and all the stuff like that = mental fellatio (first axiom of theoretical physics))
+import numpy as np  # Status: done ✅ 
+                    # (Lycherel's numbers and all the stuff 
+                    # like that = mental fellatio (first axiom of theoretical physics))
 
 
 def palindrome_chekcer(n):
