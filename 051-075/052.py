@@ -18,6 +18,7 @@ while not found:
         and digit_sorter(6 * x) - sorted_x == 0
     ):
         found = True
-        print("The searched number is:", x)
-        break
+
     x += 1
+
+print("The searched number is:", x)

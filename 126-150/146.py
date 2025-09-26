@@ -1,7 +1,7 @@
 import numpy as np
 
-primes = []
-
+limit = 10**6
+sum = 0
 
 def prime_checker(n):
     isPrime = True
@@ -10,6 +10,7 @@ def prime_checker(n):
         if r == 0:
             isPrime = False
     return isPrime
+
 
 def sieve(n):
     is_prime = [True] * (n + 1)
@@ -21,4 +22,18 @@ def sieve(n):
     return [i for i, prime in enumerate(is_prime) if prime]
 
 
-sieve(150*10**6)
+primes = sieve(limit) 
+
+for n in range(2, 10**3):
+    if prime_checker(n**2 + 1):
+        index = primes.index(n**2 + 1)
+        if (
+            primes[index + 1] == n**2 + 3
+            and primes[index + 3] == n**2 + 7
+            and primes[index + 4] == n**2 + 9
+            and primes[index + 5] == n**2 + 13
+            and primes[index + 6] == n**2 + 27
+        ):
+            sum += n
+
+print(sum)

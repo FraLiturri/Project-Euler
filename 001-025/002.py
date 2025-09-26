@@ -13,15 +13,16 @@ def Fibonacci(n):
 
 
 i = 1
-special_index = 0
-sum = 1 #initial term has to be considered
-while i > 0:
-    if Fibonacci(i) < 4 * 10**6:
-        if Fibonacci(i) % 2 == 1: 
-            sum += Fibonacci(i)
-        i = i+1
+limit = 4 * 10**6
+sum = 1  # initial term has to be considered
 
-    elif Fibonacci(i) > 4*10**6: 
+while i > 0:
+    if Fibonacci(i) < limit:
+        if Fibonacci(i) % 2 == 1:
+            sum += Fibonacci(i)
+        i = i + 1
+
+    elif Fibonacci(i) >= limit:
         break
- 
+
 print(sum)
