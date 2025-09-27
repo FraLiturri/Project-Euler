@@ -1,51 +1,40 @@
 import numpy as np
 from decimal import Decimal, getcontext
 
-getcontext().prec = 200
+getcontext().prec = 300
 
 
-def period_finder(n):
-    n = str(Decimal(1) / Decimal(n))
-    l = len(n)
-    candidate = []
-    digits = []
-    aux = []
+def period_counter(den):
+    if den < 10:
+        factor = 10
+    if den >= 10 and den < 100:
+        factor = 100
+    if den >= 100:
+        factor = 1000
 
-    for k in range(2, l):
-        digits.append(int(n[k]))
-        if int(n[k]) in digits:
-            if int(n[k]) in aux:
-                j = k
-                while int(n[j]) in aux and j + 1 < l:
-                    candidate.append(int(n[j]))
-                    if (
-                        len(candidate) == len(aux)
-                        and int(n[j + 1]) in candidate
-                    ):
-                        break
-                    j += 1
+    num = factor
+    numerators = [num]
 
-            else:
-                aux.append(int(n[k]))
+    while True:
+        r = num % den
+        num = r * factor if num < 100 else r * factor / 10
 
-            if len(candidate) == len(aux):
-                break
-        else:
-            candidate = []
-        if len(candidate) == len(aux):
+        if num in numerators:
             break
-    return candidate
+        else:
+            numerators.append(num)
+
+    return len(numerators)
 
 
-current_max = 0
-current_d = 0
+den = 101
+print(Decimal(1) / Decimal(den), period_counter(den))
 
-for d in range(2, 10):
-    candidate = period_finder(d)
+max = 0
+d = 0
+for n in range(2, 1000):
+    if max < period_counter(n):
+        d = n
+        max = period_counter(n)
 
-    if current_max < len(candidate):
-        current_max = len(candidate)
-        current_d = d
-
-print(current_d)
-print(Decimal(1)/(current_d))
+print(max, d)

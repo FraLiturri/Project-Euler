@@ -7,7 +7,8 @@ def digit_sorter(n):
 
 
 found = False
-x = 10
+x = 1000
+
 while not found:
     sorted_x = digit_sorter(x)
     if (
