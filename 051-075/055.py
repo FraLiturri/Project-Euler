@@ -1,6 +1,6 @@
 import numpy as np  # Status: done ✅ 
                     # (Lycherel's numbers and all the stuff 
-                    # like that = mental fellatio (first axiom of theoretical physics))
+                    # like that = mental fellatio (proven by evidence))
 
 
 def palindrome_chekcer(n):
@@ -41,4 +41,4 @@ for n in range(1, limit):
     if is_Lychrel(n):
         counter += 1
 
-print(counter)
+print("The Lychrel's numbers are:", counter)
