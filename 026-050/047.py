@@ -33,7 +33,7 @@ def factors_finder(input):
     return factors
 
 
-for k in range(10**5, 10**6): #to be adjusted manually;
+for k in range(10**5, 10**6):  #adjusted manually;
     if (
         len(factors_finder(k))
         == len(factors_finder(k + 1))

@@ -1,32 +1,31 @@
 import numpy as np
 import math
 
-saved_values = []
-limit = 7
+squares = []
+minimal_sol = []
+limit = 1000
+test = []
 
 
-def square_checker(n):
-    isSquare = False
-    root = math.isqrt(n)
-    if int(root) ** 2 == n:
-        isSquare = True
-    else:
-        isSquare = False
-    return isSquare
+def squares_god(n):
+    for k in range(1, n + 1):
+        squares.append(k**2)
+    return squares
 
+squares_god(10**5)
+squares = set(squares)
 
-for D in range(2, limit + 1):
-    print(D)
-    if square_checker(D):
-        D = D + 1
-    else:
-        y_square = 2
+for D in range(2, limit):
+    if D not in squares:
+        y = 1
         while True:
-            multi = D * y_square**2
-            y_square += 1
-            if square_checker(multi + 1):
-                saved_values.append(np.sqrt(multi + 1))
+            if 1 + D * y**2 in squares:
+                minimal_sol.append(1 + D * y**2)
                 break
+            if 1 + D*y**2 > 10**12:
+                #print("help:", D)
+                break
+            y += 1
+            
 
-
-print(saved_values)
+print(test)

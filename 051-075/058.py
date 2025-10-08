@@ -1,49 +1,48 @@
-import numpy as np # Status: work in progress
-
-n = 5
-numbers = []
-s = 0
+import numpy as np  # Status: work in progress
+import math
 
 
-def prime_checker(n):
-    isPrime = True
-    if n < 0:
+def sieve(n):
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+    for i in range(2, int(n**0.5) + 1):
+        if is_prime[i]:
+            for j in range(i * i, n + 1, i):
+                is_prime[j] = False
+    return [i for i, prime in enumerate(is_prime) if prime]
+
+
+def is_square(n):
+    root = math.sqrt(n)
+    root = int(root)
+
+    if root**2 == n:
+        return True
+    else:
         return False
-    for i in range(2, int(np.sqrt(n)) + 1):
-        r = n % i
-        if r == 0:
-            if i != n:
-                isPrime = False
-    return isPrime
 
 
-for i in range(0, n**2 + 1):
-    numbers.append(i)
+primes = set(sieve(10**8))
 
-j = 1
-k = 2
-sum = 0
-ratio = 0
-counter = 0
-found = False
+ratio = 100
+n = 3
+counter = 1
+numbers = [1, 3]
+step = 3
 
-while not found:
-    while j + k < len(numbers):
-        sum += numbers[j]
-        if numbers[j] == (k + 1) ** 2:
-            k += 2
-            if prime_checker(numbers[j]):
-                counteer += 1
-        j = j + k
-        ratio = counter * 100 / (n + n + 1)
+while ratio >= 10:
+    increser = n - 1
+    step += increser
 
-        if ratio <= 10:
-            print(n)
-            found = True
-            break
-        else:
-            n += 1
-    if found:
-        break
+    numbers.append(step)
+
+    if step in primes:
+        counter += 1
+
+    if is_square(step):
+        ratio = counter / len(numbers) * 100
+        print(n, counter, len(numbers), ratio)
+        n += 2
 
 
+print(n - 2)
