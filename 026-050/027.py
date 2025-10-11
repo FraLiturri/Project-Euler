@@ -1,4 +1,4 @@
-import numpy as np  # Status: done ✅
+import math  # Status: done ✅
 
 primes = []  # here are collected with sign: if p is prime, -p is prime too;
 
@@ -7,7 +7,7 @@ def prime_checker(n):
     isPrime = True
     if n < 0:
         return False
-    for i in range(2, int(np.sqrt(n)) + 1):
+    for i in range(2, int(math.sqrt(n)) + 1):
         r = n % i
         if r == 0:
             if i != n:

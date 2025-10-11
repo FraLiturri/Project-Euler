@@ -1,12 +1,13 @@
-import numpy as np # Status: done ✅
+import math # Status: done ✅
 
+limit = 10**1
+integers = [i for i in range(1, limit)]
+int_copy = set(integers)
+
+total = 0
 counter = 0
-limit = 10**7
-flag = [0] * limit
-flag_89 = [0] * limit
 
-
-def function(n):
+def sum_calc(n):
     sum = 0
     for digit in str(n):
         sum += int(digit) ** 2
@@ -15,21 +16,28 @@ def function(n):
 
 
 def reducer(n):
-    seen_num = []
+    global total 
+    input = n
+    counter = 0
+
     while True:
-        n = function(n)
-        seen_num.append(n)
+        if n < limit and n in int_copy:
+            int_copy.discard(n)
+
+        n = sum_calc(n)
+        counter += 1
+
         if n == 1 or n == 89:
+            if n == 89:
+                total += counter
+
             break
 
-    for num in seen_num:
-        flag[num] = 1
-        if n == 89:
-            flag_89[num] = 1
+i = 0
+while i < len(list(int_copy)):
+    reducer(i) 
+    i+=1
+    
+print(total)
 
 
-for k in reversed(range(1, limit)):
-    if flag[k] == 0:
-        reducer(k)
-
-print(np.sum(flag_89))

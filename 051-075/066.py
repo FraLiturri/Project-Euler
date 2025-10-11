@@ -3,7 +3,7 @@ import math
 
 squares = []
 minimal_sol = []
-limit = 1000
+limit = 66
 test = []
 
 
@@ -12,7 +12,7 @@ def squares_god(n):
         squares.append(k**2)
     return squares
 
-squares_god(10**5)
+squares_god(10**8)
 squares = set(squares)
 
 for D in range(2, limit):
@@ -20,11 +20,10 @@ for D in range(2, limit):
         y = 1
         while True:
             if 1 + D * y**2 in squares:
+                print(y)
                 minimal_sol.append(1 + D * y**2)
                 break
-            if 1 + D*y**2 > 10**12:
-                #print("help:", D)
-                break
+
             y += 1
             
 

@@ -1,4 +1,4 @@
-import numpy as np  # Status: done ✅
+import math # Status: done ✅
 
 n = 1001
 numbers = []

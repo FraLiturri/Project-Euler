@@ -3,8 +3,8 @@ from decimal import Decimal, getcontext
 
 getcontext().prec = 50
 
-inf = 10**12 + 10**8
-limit = 10**12 + 10**9
+inf = 10**12 + 10**4
+limit = 10**12 + 10**6
 
 for i in range(inf, limit):
 
